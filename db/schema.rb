@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_06_21_152529) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "weather_data", force: :cascade do |t|
     t.string "name"
     t.datetime "date_time"

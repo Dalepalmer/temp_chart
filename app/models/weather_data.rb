@@ -10,8 +10,8 @@ class WeatherData < ApplicationRecord
     resp = {}
     resp["date_range_start"] = data[0].date_time.beginning_of_month
     resp["date_range_end"] = data[0].date_time.end_of_month
-    resp["heating_days"] = data.where('maximum_temperature > ?', max_temp.to_f).group(:date_time).length
-    resp["cooling_days"] = data.where('minimum_temperature < ?', min_temp.to_f).group(:date_time).length
+    resp["heating_days"] = data.where('maximum_temperature > ?', max_temp.to_f).group(:date_time).count.length
+    resp["cooling_days"] = data.where('minimum_temperature < ?', min_temp.to_f).group(:date_time).count.length
     resp
   end
 
