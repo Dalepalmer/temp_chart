@@ -15,6 +15,22 @@ class WeatherData < ApplicationRecord
     resp
   end
 
+
+  def check_data(data)
+    count = 0
+    counted_days = {}
+    data.each do |datapoint| 
+      date = datapoint[0].to_date
+      if counted_days.key?(date)
+        next
+      else
+        counted_days[date] = "moo"
+        count += 1
+      end
+    end
+    count
+  end
+
   def self.heating_days(date, max_temp)
     month_data = WeatherData.by_month(date)
     month_data.where('temperature < ?', max_temp.to_f).count
