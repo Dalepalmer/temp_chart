@@ -31,6 +31,6 @@ How to run locally
  6. Start the rails server with  `rails s`
  7. State the webpack server in another terminal window to serve assets  `./bin/webpack-dev-server`
  8. Navigate to localhost:3000 to see the weather UI
- 9. To see the json respone navigate to localhost:3000.json/?date_time=%2201/07/2020%22&min_temp=65&max_temp=72
+ 9. To see the json respone navigate to localhost:3000.json/?date_time=01/07/2020&&min_temp=65&max_temp=72
 
 To see the demo site navigate [here](https://weather-portal11.herokuapp.com/). Heroku can take a moment to spin up on first load.
